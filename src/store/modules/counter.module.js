@@ -20,7 +20,5 @@ export default{
         decrementcounter:function({commit},payload){
             return commit ("decr_count",payload) 
         },
-    },
-    modules: {
     }
 }
