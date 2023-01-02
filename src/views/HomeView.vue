@@ -1,14 +1,15 @@
 <template>
   <div class="home">
-    <h2>{{ value }}</h2>
-  <button v-on:click="increment(1,$event)">increment</button> |
-  <button v-on:click="decrement(1,$event)">decrement</button> |
-  <button @click="increment(5,$event)">increment x 5</button> |
-  <button @click="decrement(5,$event)">decrement x 5</button> 
+    <h2>{{ counterState.count }}</h2>
+  <button v-on:click="increment(1)">increment</button> |
+  <button v-on:click="decrement(1)">decrement</button> |
+  <button @click="increment(5)">increment x 5</button> |
+  <button @click="decrement(5)">decrement x 5</button> 
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'HomeView',
@@ -18,14 +19,15 @@ export default {
     };
   },
   methods:{
-    increment(n,event){
-        this.value +=n
-        console.log(event)
+    increment(value){
+      this.$store.dispatch("counterModule/incrementcounter",{value:value})        
     },
-    decrement(n,event){
-        this.value -=n
-        console.log(event)
+    decrement(value){
+      this.$store.dispatch("counterModule/incrementcounter",{value:value})        
     },
-  }
+  },
+  computed: mapGetters({
+    counterState : "getCounterState"
+  })
 }
 </script>
