@@ -1,10 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Navmenu/>
   <router-view/>
 </template>
+
+<script lang="js">
+import Navmenu from './components/NavMenu.vue'
+export default {
+    name:'app',
+    components:{
+      Navmenu
+    }
+}
+</script>
 
 <style>
 #app {
