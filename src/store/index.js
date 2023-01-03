@@ -4,7 +4,8 @@ import employeeModule from './modules/employee.module';
 
 export default createStore({
   state: {
-    counterState: counterModule.state
+    counterState: counterModule.state,
+    employeeState: employeeModule.state
   },
   getters: {
     getCounterState: function (state) {
