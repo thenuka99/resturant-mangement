@@ -5,7 +5,7 @@ export default {
     state: {
         employeeList: {
             loading: false,
-            users: [],
+            employees: [],
             errorMessage: null
         }
     },
