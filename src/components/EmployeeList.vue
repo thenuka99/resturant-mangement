@@ -27,13 +27,13 @@
   >
     <div class="row">
       <div class="col">
-        <p class="fw-bold text-danger">{{ employeeState.errorMessage }}</p>
+        <p class="fw-bold text-danger">{{ errorMessage }}</p>
       </div>
     </div>
   </div>
 
   <div
-    v-if="!loading"
+    v-if="!loading && !errorMessage"
     class="container"
   >
     <div class="row">
@@ -89,7 +89,7 @@ export default {
       this.loading=false;
     } catch (error) {
       this.loading=false;
-      this.errorMessage=this.error;
+      this.errorMessage=error;
     }
   },
 };
